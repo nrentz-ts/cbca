@@ -1,10 +1,11 @@
 {
-  "name": "js",
-  "version": "0.0.0",
+  "name": "cbca",
+  "version": "1.0.0",
+  "description": "Code Based Custom Actions - ThoughtSpot Embed Application",
   "private": true,
   "scripts": {
-    "start": "python3 -m http.server 8000",
-    "dev": "python3 -m http.server 8000"
+    "dev": "npx serve .",
+    "start": "npx serve ."
   },
   "dependencies": {
     "@thoughtspot/visual-embed-sdk": "^1.42.0",
