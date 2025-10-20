@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="https://unpkg.com/@thoughtspot/visual-embed-sdk@1.42.0/dist/tsembed.es.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="#" class="nav-branding">TSE </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a id="liveboard-link" class="nav-link">Liveboard Embed</a>
+          </li>
+          <li class="nav-item">
+            <a id="full-app-link" class="nav-link">Full App Embed</a>
+          </li>
+          <li class="nav-item">
+            <a id="search-link" class="nav-link">Search Embed</a>
+          </li>
+          <li class="nav-item">
+            <a id="spotter-link" class="nav-link">Spotter Embed</a>
+          </li>
+          <li class="nav-item">
+            <a id="searchbar-link" class="nav-link">Searchbar Embed</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <button id="getFilters">Get Filters</button>
+    <button id="updateFilters2">Update filters</button>
+    <script type="module" src="index.js"></script>
+    <script src="script.js"></script>
+    <div id="embed" style="height: 100vh; width: 100vw"></div>
+    <!-- <div id="liveboardembed" style="height: 100vh; width: 100vw"></div> -->
+
+    <!-- <div id="vizembed" style="height: 100vh; width: 100vw"></div> -->
+    <!--  <div id="searchembed" style="height: 100vh; width: 100vw"></div> -->
+    <!--  <div id="fullappembed" style="height: 100vh; width: 100vw"></div> -->
+
+    <!-- Spotter Popup Overlay -->
+    <div id="spotter-popup" class="popup-overlay" style="display: none;">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3>🐶 Spotter AI Assistant</h3>
+          <div class="header-buttons">
+            <button id="save-to-liveboard" class="save-button" title="Save last visualization to liveboard">
+              📌 Save to liveboard
+            </button>
+            <button id="close-spotter-popup" class="close-button">&times;</button>
+          </div>
+        </div>
+        <div id="spotter-embed-container" class="popup-body">
+          <!-- Spotter embed will be rendered here -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
