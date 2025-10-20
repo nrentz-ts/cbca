@@ -27,8 +27,8 @@ import {
 } from './actions.js';
 
 // Embedding the Embed1 cluster
-// const tsClusterUrl = 'https://champagne-master-aws.thoughtspotstaging.cloud';
-const tsClusterUrl = 'https://172.32.6.51:8443'; 
+const tsClusterUrl = 'https://champagne-master-aws.thoughtspotstaging.cloud';
+// const tsClusterUrl = 'https://172.32.6.51:8443'; 
 const liveboardguid = '906e3896-0beb-426c-b56c-945cd102e013';
 const vizguid = '48ab1b94-1b13-408e-ba9b-76256114c5fa';
 const searchdatasourceguid = ['cd252e5c-b552-49a8-821d-3eadaa049cca'];
@@ -1005,16 +1005,10 @@ function logFilters(filters) {
 }
 
 /*-------------------- Default state ----------------- */
-console.log('🚀 Starting default embed...');
-try {
-  liveboardembed();
-  console.log('✅ Default embed started');
-} catch (error) {
-  console.error('❌ Error starting default embed:', error);
-}
+liveboardembed();
 //spotterembed();
 // vizembed();
-// fullappembed();
+//  fullappembed();
 // searchembed();
 // searchbarembed();
 
