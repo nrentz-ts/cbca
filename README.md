@@ -23,6 +23,7 @@ To use a different ThoughtSpot instance, update the `tsClusterUrl` variable in `
 
 ## Tech Stack
 <details>
+
 - Vanilla JavaScript (ES6 Modules)
 - ThoughtSpot Visual Embed SDK v1.42.0
 - HTML5 & CSS3
