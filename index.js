@@ -41,7 +41,7 @@ const vizguid = '48ab1b94-1b13-408e-ba9b-76256114c5fa';
 const searchdatasourceguid = ['cd252e5c-b552-49a8-821d-3eadaa049cca'];
 const searchtokens = '[sales][item type][state].California';
 
-// Extract and display cluster name in header
+// Extract and display cluster name in sidebar
 function displayClusterInfo() {
   try {
     const url = new URL(tsClusterUrl);
@@ -50,7 +50,7 @@ function displayClusterInfo() {
     const clusterName = hostname.split('.')[0];
     const clusterIndicator = document.getElementById('cluster-indicator');
     if (clusterIndicator) {
-      clusterIndicator.textContent = `[${clusterName}]`;
+      clusterIndicator.textContent = clusterName;
     }
   } catch (error) {
     console.error('Error displaying cluster info:', error);
@@ -311,7 +311,7 @@ const liveboardembed = () => {
       // },
       dataModelIds: {
           // Restrict to specific worksheets/data models
-         modelIds: ['36e8f5de-b5f0-4167-99e7-9cb239a98975'],
+         modelIds: ['6a4f4e1c-9d5a-4093-9381-6f08994a7f07'],
           // Restrict to specific columns within worksheets
           // modelColumnNames: ['cd252e5c-b552-49a8-821d-3eadaa049cca::state']
       },
