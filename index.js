@@ -243,52 +243,23 @@ const liveboardembed = () => {
           name: 'CA: Create new visualization',
           position: CustomActionsPosition.PRIMARY,
           target: CustomActionTarget.LIVEBOARD,
-          
-          // Optional: Restrict where this action appears based on metadata
-          // metadataIds: {
-          //     // Restrict to specific liveboards
-          //     liveboardIds: ['906e3896-0beb-426c-b56c-945cd102e013'],
-          // },
       },
       {
-          // Unique identifier for the custom action
           id: 'cbca-google-search',
-          // Display name shown to users in the UI
           name: 'CA: Google Search',
-          
-          // Where the action appears in the UI
-          // PRIMARY: Shows as a primary button (e.g., in the toolbar)
-          // MENU: Shows in the "More" menu (three dots menu)
-          // CONTEXTMENU: Shows in the right-click context menu
           position: CustomActionsPosition.CONTEXTMENU,
-          
-          // What type of content this action applies to
-          // VIZ: Available on individual visualizations
           target: CustomActionTarget.VIZ,
-          
-          // Optional: Restrict where this action appears based on metadata
-          // metadataIds: {
-          //     // Restrict to specific answers
-          //     answerIds: ['answer-id-1', 'answer-id-2'],
-          //     // Restrict to specific liveboard. If liveboardId is
-          //    // passed, custom actions will appear on all vizzes of liveboard
-          //     lieboardIds: ['liveboard-id-1'],
-          //    // Restrict to specific vizIds
-          //     vizIds: ['viz-id-1']
-          // },
           dataModelIds: {
-              // Restrict to specific worksheets/data models
-             // modelIds: ['worksheet-id-1', 'worksheet-id-2'],
-              // Restrict to specific columns within worksheets
               modelColumnNames: ['cd252e5c-b552-49a8-821d-3eadaa049cca::state']
-          },
-          //     // Restrict to specific groups (for group-based access control)
-          //     groupIds: ['group-id-1', 'group-id-2'],
-          //     // Restrict to specific organizations (for multi-org deployments)
-          //     orgIds: ['org-id-1', 'org-id-2'],
+          }
       },
       {
-        // Unique identifier for the custom action
+          id: 'cbca-weather-search',
+          name: 'CA: Weather Search',
+          position: CustomActionsPosition.CONTEXTMENU,
+          target: CustomActionTarget.VIZ,
+      },
+      {
         id: 'jira-custom-action',
         name: 'CA: Log Jira Issue',
         position: CustomActionsPosition.CONTEXTMENU,
@@ -607,87 +578,3 @@ document
   .getElementById('full-app-link')
   .addEventListener('click', fullappembed);
 
-// Debug function to show what's happening with the save process
-window.debugSaveProcess = function() {
-  console.log('🔍 Debugging save process...');
-  console.log('📊 Current liveboard ID:', liveboardguid);
-  console.log('📊 Main liveboard embed:', mainLiveboardEmbed);
-  console.log('📊 Spotter embed:', spotterEmbedInstance);
-  console.log('📊 Last visualization data:', lastVisualizationData);
-  
-  if (mainLiveboardEmbed) {
-    console.log('📊 Main liveboard embed methods:', Object.getOwnPropertyNames(mainLiveboardEmbed));
-  }
-  
-  if (spotterEmbedInstance) {
-    console.log('📊 Spotter embed methods:', Object.getOwnPropertyNames(spotterEmbedInstance));
-  }
-  
-  console.log('📊 Available HostEvents:', Object.keys(HostEvent));
-  
-  // Try to get current answer from Spotter
-  if (spotterEmbedInstance) {
-    spotterEmbedInstance.trigger(HostEvent.GetCurrentAnswer).then((answer) => {
-      console.log('📊 Current Spotter answer:', answer);
-    }).catch((error) => {
-      console.error('❌ Error getting current answer:', error);
-    });
-  }
-};
-
-// Debug function to inspect the last visualization data
-window.inspectData = function() {
-  console.log('🔍 Inspecting lastVisualizationData...');
-  console.log('📊 Full object:', lastVisualizationData);
-  
-  if (lastVisualizationData && lastVisualizationData.data) {
-    console.log('📊 Data object:', lastVisualizationData.data);
-    console.log('📊 Data keys:', Object.keys(lastVisualizationData.data));
-    
-    // Deep inspection
-    Object.keys(lastVisualizationData.data).forEach(key => {
-      console.log(`📊 ${key}:`, lastVisualizationData.data[key]);
-    });
-  }
-};
-
-// Debug function to inspect the captured Spotter context
-window.inspectContext = function() {
-  console.log('🔍 Inspecting Spotter context:');
-  console.log('📊 Captured context:', spotterContext);
-  console.log('📊 LiveboardID:', spotterContext.liveboardId);
-  console.log('📊 TabID:', spotterContext.tabId);
-  console.log('📊 Global liveboard ID:', liveboardguid);
-};
-
-// Debug function to manually test path parsing
-window.testPathParsing = function(testPath) {
-  console.log('🧪 Testing path parsing with:', testPath);
-  const result = parseCurrentPath(testPath);
-  console.log('📊 Parsing result:', result);
-  return result;
-};
-
-// Debug function to manually set context
-window.setContext = function(liveboardId, tabId) {
-  console.log('🔧 Manually setting context - LiveboardID:', liveboardId, 'TabID:', tabId);
-  spotterContext.liveboardId = liveboardId;
-  spotterContext.tabId = tabId;
-  console.log('📊 Updated context:', spotterContext);
-};
-
-// Quick test function to set the known context
-window.setKnownContext = function() {
-  console.log('🔧 Setting known context from your example...');
-  spotterContext.liveboardId = 'b5508f17-0f1d-4def-9379-7c249c1c1395';
-  spotterContext.tabId = '7e223cae-8f82-4f50-a9eb-428ad908ef13';
-  console.log('📊 Set context:', spotterContext);
-  console.log('✅ Now try the save button!');
-};
-
-// Quick check function
-window.checkContext = function() {
-  console.log('🔍 Current context:', spotterContext);
-  console.log('🔍 LiveboardID:', spotterContext.liveboardId);
-  console.log('🔍 TabID:', spotterContext.tabId);
-};
