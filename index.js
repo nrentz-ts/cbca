@@ -33,7 +33,7 @@ import {
 } from './custom-action-functions.js';
 
 // Embedding the Embed1 cluster
-const tsClusterUrl = 'https://champagne-master-aws.thoughtspotstaging.cloud';
+const tsClusterUrl = 'https://pm-aws-v1.thoughtspotstaging.cloud';
 // const tsClusterUrl = 'https://172.32.6.51:8443'; 
 const liveboardguid = '906e3896-0beb-426c-b56c-945cd102e013';
 const vizguid = '48ab1b94-1b13-408e-ba9b-76256114c5fa';
@@ -252,12 +252,6 @@ const liveboardembed = () => {
           dataModelIds: {
               modelColumnNames: ['cd252e5c-b552-49a8-821d-3eadaa049cca::state']
           }
-      },
-      {
-          id: 'cbca-weather-search',
-          name: 'CA: Weather Search',
-          position: CustomActionsPosition.CONTEXTMENU,
-          target: CustomActionTarget.VIZ,
       },
       {
         id: 'jira-custom-action',
