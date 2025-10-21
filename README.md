@@ -30,6 +30,7 @@ To use a different ThoughtSpot instance, update the `tsClusterUrl` variable in `
 
 ## Local Development
 <details>
+
 ### Prerequisites
 
 Before you begin, make sure you have the following installed on your computer:
@@ -84,8 +85,10 @@ That's it! The application should now be running locally on your machine.
 
 To stop the development server, press `Ctrl + C` in your terminal.
 </details>
+
 ## Deploy to Vercel
 <details>
+
 ### Option 1: Deploy via Vercel CLI
 
 ```bash
