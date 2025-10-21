@@ -9,31 +9,46 @@
     <script type="module" src="https://unpkg.com/@thoughtspot/visual-embed-sdk@1.42.0/dist/tsembed.es.js"></script>
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <a href="#" class="nav-branding">TSE: Code-based custom actions Demos - running from: <span id="cluster-indicator" style="color: #00b4d8; font-weight: 600; margin-left: 8px;"></span></a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a id="liveboard-link" class="nav-link">Liveboard Embed</a>
-          </li>
-          <li class="nav-item">
-            <a id="full-app-link" class="nav-link">Full App Embed</a>
-          </li>
-          <li class="nav-item">
-            <a id="spotter-link" class="nav-link">Spotter Embed</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
-    </header>
+    <!-- Left Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h3>TSE Demos</h3>
+        <div id="cluster-indicator" class="cluster-badge"></div>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a id="liveboard-link" class="nav-link">
+            <span class="nav-icon">📊</span>
+            <span class="nav-text">Liveboard Embed</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="full-app-link" class="nav-link">
+            <span class="nav-icon">🖥️</span>
+            <span class="nav-text">Full App Embed</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="spotter-link" class="nav-link">
+            <span class="nav-icon">🤖</span>
+            <span class="nav-text">Spotter Embed</span>
+          </a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div id="embed" style="height: 100%; width: 100%"></div>
+    </div>
     
     <script type="module" src="index.js"></script>
     <script src="script.js"></script>
-    <div id="embed" style="height: 100vh; width: 100vw"></div>
     <!-- <div id="liveboardembed" style="height: 100vh; width: 100vw"></div> -->
 
     <!-- <div id="vizembed" style="height: 100vh; width: 100vw"></div> -->
