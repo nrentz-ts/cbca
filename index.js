@@ -18,14 +18,6 @@ import {
   CustomActionTarget
 } from 'https://unpkg.com/@thoughtspot/visual-embed-sdk@1.42.0/dist/tsembed.es.js';
 
-// Import actions
-import {
-  actions,
-  lbvisibaction,
-  drillactions,
-  MobileActions,
-} from './actions.js';
-
 // Import helper functions
 import {
   parseCurrentPath,
@@ -48,24 +40,6 @@ const vizguid = '48ab1b94-1b13-408e-ba9b-76256114c5fa';
 const searchdatasourceguid = ['cd252e5c-b552-49a8-821d-3eadaa049cca'];
 const searchtokens = '[sales][item type][state].California';
 
-function getWidth() {
-  return Math.max(
-    document.body.scrollWidth,
-    document.documentElement.scrollWidth,
-    document.body.offsetWidth,
-    document.documentElement.offsetWidth,
-    document.documentElement.clientWidth
-  );
-}
-
-console.log('Width:  ' + getWidth());
-if (getWidth() < 500) {
-  var hideactions = MobileActions;
-} else {
-  hideactions = [];
-}
-
-// lbvisibaction = [Action.Monitor];
 /*-------------------- INIT ----------------- */
 
 
@@ -517,7 +491,6 @@ const fullappembed = () => {
   },
   ],
     // pageId: Page.Liveboards,
-    // disabledActions: TMLactions,
     // disabledActionReason: 'Please upgrade',
     // visibleActions: [],
   });
