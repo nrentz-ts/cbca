@@ -34,11 +34,35 @@ import {
 
 // Embedding the Embed1 cluster
 const tsClusterUrl = 'https://pm-aws-v1.thoughtspotstaging.cloud';
+
 // const tsClusterUrl = 'https://172.32.6.51:8443'; 
 const liveboardguid = '906e3896-0beb-426c-b56c-945cd102e013';
 const vizguid = '48ab1b94-1b13-408e-ba9b-76256114c5fa';
 const searchdatasourceguid = ['cd252e5c-b552-49a8-821d-3eadaa049cca'];
 const searchtokens = '[sales][item type][state].California';
+
+// Extract and display cluster name in header
+function displayClusterInfo() {
+  try {
+    const url = new URL(tsClusterUrl);
+    const hostname = url.hostname;
+    // Extract the cluster identifier (e.g., "pm-aws-v1" from "pm-aws-v1.thoughtspotstaging.cloud")
+    const clusterName = hostname.split('.')[0];
+    const clusterIndicator = document.getElementById('cluster-indicator');
+    if (clusterIndicator) {
+      clusterIndicator.textContent = `[${clusterName}]`;
+    }
+  } catch (error) {
+    console.error('Error displaying cluster info:', error);
+  }
+}
+
+// Call this function when DOM is loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', displayClusterInfo);
+} else {
+  displayClusterInfo();
+}
 
 /*-------------------- INIT ----------------- */
 
